@@ -1,0 +1,28 @@
+ALGORITHM chek2
+VAR
+    set1: ARRAY_OF INTEGER[5]:=[3, 1, 7, 9];
+    set2: ARRAY_OF INTEGER[6]:=[2, 4, 1, 9, 3];
+    tab : ARRAY_OF INTEGER[];
+    found:=BOOLEAN
+    sum_distinct:INTEGER
+    sum_commun:INTEGER:=0
+
+BEGIN
+    tab:=concat(set1,set2)
+ FOR i FROM 0 TO tab.lenght()  DO
+    found:=false
+     FOR j FROM 0 TO tab.lenght()   DO
+        IF (tab[i]=tab[j]AND i<>j) THEN
+            found:=true
+             sum_commun:=sum_commun+tab[i]
+            break;
+         END_IF
+     END_FOR
+    IF (found=false) THEN
+        sum_distinct:=sum_distinct+tab[i]
+       
+    END_IF 
+ END_FOR
+       set_instructions
+   END_FOR
+END
